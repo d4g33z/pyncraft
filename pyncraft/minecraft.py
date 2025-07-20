@@ -132,7 +132,7 @@ class CmdPlayer(CmdPositioner):
         self.conn.send(self.pkg + b".setHealth", self.playerId, health)
     
     def sendTitle(self, title:str, subTitle:str="", fadeIn:int=10, stay:int=70, fadeOut:int=20) -> None:
-        self.conn.send(self.pkg + b".sendTitle", id, title, subTitle, fadeIn, stay, fadeOut)
+        self.conn.send(self.pkg + b".sendTitle", self.playerId, title, subTitle, fadeIn, stay, fadeOut)
  
 class CmdPlayerEntity(CmdPlayer):
     """ use entity to build a player """
