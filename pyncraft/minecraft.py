@@ -208,7 +208,7 @@ class Minecraft:
 
         self.events = CmdEvents(connection)
         self.playerId = playerId
-        self.settings = settings
+        # self.settings = settings
 
     def getBlock(self, x:int, y:int, z:int) -> str:
         """Get block (x,y,z) => id:int"""
