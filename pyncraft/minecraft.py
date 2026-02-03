@@ -230,9 +230,10 @@ class Minecraft:
         zSize = abs(z1 - z2) + 1
         totalSize = xSize * ySize * zSize
         arr3d = []
-        
-        if len(arr1d) != totalSize:
-            warn('Get number of blocks is incomplete')
+
+        # loggging must be re-implemented
+        # if len(arr1d) != totalSize:
+        #     warn('Get number of blocks is incomplete')
         
         for i in range(0,totalSize,xSize*ySize):
             curArr = []
@@ -347,15 +348,12 @@ class Minecraft:
 
     @staticmethod
     def create(address = "localhost", port = 4711, playerName = ""):
-        #return Minecraft(Connection(address, port))
-
-
-        log("Running Python version:"+sys.version)
+        # log("Running Python version:"+sys.version)
         conn=Connection(address, port)
         playerId = []
         if playerName != "":
            playerId = int(conn.sendReceive(b"world.getPlayerId", playerName))
-           log("get {} playerid={}".format(playerName, playerId))
+           # log("get {} playerid={}".format(playerName, playerId))
 
         return Minecraft(conn,playerId)
 
